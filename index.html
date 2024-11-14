@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory and Wallet Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <h1>Inventory & Wallet</h1>
+    </div>
+    <div class="user-info">
+      <span id="username">John Doe</span>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="#" id="dashboardLink">Dashboard</a></li>
+        <li><a href="#" id="inventoryLink">Inventory</a></li>
+        <li><a href="#" id="walletLink">Wallet</a></li>
+        <li><a href="#" id="transactionsLink">Transactions</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content Area -->
+  <main id="mainContent">
+    <!-- Dashboard Section -->
+    <section id="dashboardSection" class="section active">
+      <h2>Dashboard</h2>
+      <div id="dashboardStats">
+        <div class="stat">
+          <h3>Total Inventory Value</h3>
+          <p id="totalInventoryValue">$0.00</p>
+        </div>
+        <div class="stat">
+          <h3>Current Wallet Balance</h3>
+          <p id="walletBalance">$0.00</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inventory Section -->
+    <section id="inventorySection" class="section">
+      <h2>Inventory Management</h2>
+      <button id="addProductBtn">Add New Product</button>
+      <table id="inventoryTable">
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Inventory items will be listed here -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Wallet Section -->
+    <section id="walletSection" class="section">
+      <h2>Wallet Management</h2>
+      <div class="wallet-balance">
+        <p>Current Balance: <span id="currentBalance">$0.00</span></p>
+      </div>
+      <div>
+        <button id="addFundsBtn">Add Funds</button>
+        <button id="withdrawFundsBtn">Withdraw Funds</button>
+      </div>
+      <h3>Transaction History</h3>
+      <table id="walletTransactions">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>Balance After</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Wallet transactions will be listed here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Modal for Adding Product -->
+  <div id="addProductModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModalBtn">&times;</span>
+      <h2>Add Product</h2>
+      <form id="addProductForm">
+        <label for="productName">Product Name</label>
+        <input type="text" id="productName" required>
+
+        <label for="productSKU">SKU</label>
+        <input type="text" id="productSKU" required>
+
+        <label for="productCategory">Category</label>
+        <input type="text" id="productCategory" required>
+
+        <label for="productPrice">Price</label>
+        <input type="number" id="productPrice" required>
+
+        <label for="productQuantity">Quantity</label>
+        <input type="number" id="productQuantity" required>
+
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal for Adding Funds -->
+  <div id="addFundsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeFundsModalBtn">&times;</span>
+      <h2>Add Funds to Wallet</h2>
+      <form id="addFundsForm">
+        <label for="fundsAmount">Amount</label>
+        <input type="number" id="fundsAmount" required>
+
+        <button type="submit">Add Funds</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal for Withdraw Funds -->
+  <div id="withdrawFundsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeWithdrawModalBtn">&times;</span>
+      <h2>Withdraw Funds</h2>
+      <form id="withdrawFundsForm">
+        <label for="withdrawAmount">Amount</label>
+        <input type="number" id="withdrawAmount" required>
+
+        <button type="submit">Withdraw Funds</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
